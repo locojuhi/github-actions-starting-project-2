@@ -1,0 +1,16 @@
+name: Second workflow exercise
+on: 
+  push:
+    branches:
+      -  main
+jobs:
+  first-job:
+    name: The first job of this workflow
+    runs-on: ubuntu:latest
+    steps:
+      - name: Get Source code
+        uses: actions/checkout@v4
+      - name: Install dependencies and execute test
+        run: npm install
+      - name: Execute test
+        run: npm run test
