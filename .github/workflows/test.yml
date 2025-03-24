@@ -3,6 +3,7 @@ on:
   push:
     branches:
       -  main
+  workflow_dispatch:
 jobs:
   first-job:
     name: The first job of this workflow
