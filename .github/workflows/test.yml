@@ -14,3 +14,15 @@ jobs:
         run: npm install
       - name: Execute test
         run: npm run test
+  second-job-deployment:
+    name: Deploy the artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get souce code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Deliver the code
+        run: echo "Delivering the code to the server"
