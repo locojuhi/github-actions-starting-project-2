@@ -16,6 +16,7 @@ jobs:
         run: npm run test
   second-job-deployment:
     name: Deploy the artifact
+    needs: first-job 
     runs-on: ubuntu-latest
     steps:
       - name: Get souce code
